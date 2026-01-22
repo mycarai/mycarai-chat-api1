@@ -8,7 +8,9 @@ export default function handler(
     return res.status(200).json({ message: "API is working" });
   }
 
+  const { message } = req.body || {};
+
   return res.status(200).json({
-    reply: "Hello from mycarAi backend",
+    reply: `mycarAi received: ${message}`,
   });
 }
